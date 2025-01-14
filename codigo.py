@@ -41,4 +41,12 @@ pyautogui.click(x=597, y=288)
 
 tabela = print(pandas.read_csv('produtos.csv'))
 
-MOLO000251,Logitech,Mouse,1,25.95,6.50,
+#codigo 
+pyautogui.write('MOLO000251')
+pyautogui.press('tab')
+
+#marca
+pyautogui.write('Logitech')
+pyautogui.press(tab)
+
+#MOLO000251,Logitech,Mouse,1,25.95,6.50,
