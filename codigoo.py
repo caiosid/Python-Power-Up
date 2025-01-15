@@ -34,31 +34,35 @@ time.sleep(2)
 for linha in tabela.index:
     pyautogui.click(x=598, y=292)
 
-    codigo = 'MOLO000251'
+    codigo = tabela.loc[linha, 'codigo']
     pyautogui.write(str(codigo))
     pyautogui.press('tab')
 
-    marca = 'Logitech'
+    marca = tabela.loc[linha, 'marca']
     pyautogui.write(str(marca))
     pyautogui.press('tab')
 
-    tipo = 'Mouse'
+    tipo = tabela.loc[linha,'tipo']
     pyautogui.write(str(tipo))
     pyautogui.press('tab')
 
-    categoria = 1
+    categoria = tabela.loc[linha,'categoria']
     pyautogui.write(str(categoria))
     pyautogui.press('tab')
 
-    preco_unitario = 25.95
+    preco_unitario = tabela.loc[linha, 'preco_unitario']
     pyautogui.write(str(preco_unitario))
     pyautogui.press('tab')
 
-    custo = 6.50
+    custo = tabela.loc[linha,'custo']
     pyautogui.write(str(custo))
     pyautogui.press('tab')
-
-    pyautogui.write('')
+    
+    obs = str(tabela.loc[linha, 'obs'])
+    
+    if obs != 'nan':
+        pyautogui.write(obs)
+    
     pyautogui.press('tab')
 
     pyautogui.press('enter')
